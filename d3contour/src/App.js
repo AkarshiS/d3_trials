@@ -7,7 +7,7 @@ import {useEffect, useRef, useState} from "react";
 
 export default function App() {
   
-    const faithful = d3.tsv("//assets/faithful.tsv", d3.autoType);
+    const faithful = d3.tsv("//assets/faithful.tsv", d3.autoType).then(setData);
     const bandwidth = 20;
     const plot = Plot.plot({
       color: {scheme:"Turbo"},
